@@ -14,7 +14,7 @@ const abi = [
 async function getBalanceETH(value) {
     if ( value === "amount" ) {
         const balance = await provider.getBalance(wallet.address);
-        const balanceInEth = ethers.formatEther(balance); // wei to ether
+        const balanceInEth = ethers.formatEther(balance); 
         return balanceInEth;
     } else if ( value === "name" ) {
         const networkDetect = await provider._detectNetwork();
@@ -30,10 +30,10 @@ async function getBalanceETH(value) {
 }
 
 async function getBalanceERC20(token, value) {
-    const contract = new Contract(token, abi, provider); // ERC20 token contract address
+    const contract = new Contract(token, abi, provider);
     if ( value === "amount" ) {
         const balance = await contract.balanceOf(wallet.address);
-        const balanceInEth = ethers.formatEther(balance); // wei to ether
+        const balanceInEth = ethers.formatEther(balance); 
         return balanceInEth;
     } else if ( value === "name" ) {
         const erc20_name = await contract.name();
