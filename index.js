@@ -53,7 +53,7 @@ bot.command ("sendeth", async (ctx) => {
         get_address = ctx.message.text;
 
         ctx.reply("Сколько?");
-        bot.hears(/^\d+/, async (ctx) => { // wtf?
+        bot.hears(/^\d+/, async (ctx) => {
             get_amount = ctx.message.text;
             let get_balance_eth = await funcs.getBalanceETH("amount");
 
